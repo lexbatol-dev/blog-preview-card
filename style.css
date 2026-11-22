@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-gray-500: hsl(0, 0%, 42%);
+  --color-gray-950: hsl(0, 0%, 7%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-yellow: hsl(47, 88%, 63%);
+
+  --font-family-base: "Figtree", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-extra-bold: 800;
+
+  --font-size-preset-1: 1.5rem;
+  --font-size-preset-2: 1rem;
+  --font-size-preset-3: 0.875rem;
+
+  --line-height-base: 1.5;
+  --letter-spacing-base: 0px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
