@@ -1,5 +1,20 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 :root {
@@ -26,10 +41,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0 20px;
-  line-height: var(--letter-spacing-base);
+  min-height: 100dvh;
+  padding: 0 1.5rem;
+  line-height: var(--line-height-base);
 }
 
 main {
@@ -41,40 +55,41 @@ main {
 
 .card {
   width: 100%;
-  max-width: 384px;
+  max-width: 24rem;
   background-color: var(--color-white);
-  padding: 24px;
+  padding: 1.5rem;
   border: 1px solid var(--color-gray-950);
-  border-radius: 20px;
+  border-radius: 1.25rem;
   box-shadow: 8px 8px 0 0 hsl(0, 0%, 0%);
 }
 
 .illustration {
   width: 100%;
-  display: block;
-  border-radius: 10px;
-  aspect-ratio: 336 / 200;
-  margin-bottom: 24px;
+  border-radius: 0.625rem;
+  height: 12.5rem;
+  object-fit: cover;
+  object-position: left;
+  margin-bottom: 1.5rem;
 }
 
-.learning {
+.category {
   display: inline-block;
   background-color: var(--color-yellow);
   font-size: var(--font-size-preset-3);
   font-weight: var(--font-weight-extra-bold);
-  border-radius: 4px;
-  padding: 4px 12px;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
 }
 
 .date {
   font-size: var(--font-size-preset-3);
   font-weight: var(--font-weight-medium);
   color: var(--color-gray-950);
-  margin-top: 12px;
+  margin-top: 0.75rem;
 }
 
 .card h1 {
-  margin-top: 12px;
+  margin: 0.75rem 0;
   font-size: var(--font-size-preset-1);
   color: var(--color-gray-950);
   font-weight: var(--font-weight-extra-bold);
@@ -98,29 +113,51 @@ main {
   font-size: var(--font-size-preset-2);
   color: var(--color-gray-500);
   font-weight: var(--font-weight-medium);
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .author {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .author img {
-  display: block;
-  width: 32px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 
 .author span {
-  font-size: var(--font-size-preset-3);
+  font-size: 0.875rem;
   font-weight: var(--font-weight-extra-bold);
 }
 
 .attribution {
   font-size: 0.6875rem;
   text-align: center;
+  padding-bottom: 1.25rem;
+  color: var(--color-gray-950);
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.attribution a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid var(--color-gray-950);
+  outline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+  :root {
+    --font-size-preset-1: 1.25rem;
+    --font-size-preset-2: 0.875rem;
+    --font-size-preset-3: 0.75rem;
+  }
 }
