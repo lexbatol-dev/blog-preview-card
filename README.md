@@ -74,7 +74,7 @@ This project helped me put several HTML and CSS concepts into practice, especial
     }
     ```
 
-- **px to rem:** I learned to divide the px value by 16 (24px is 1.5rem and 12px is 0.75rem). I used rem for font sizes and spacing, and kept px for the border, outline and shadow so they stay thin and crisp.
+- **px to rem:** I learned to divide the px value by 16 (24px is 1.5rem and 12px is 0.75rem). I used rem for font sizes and spacing, and kept px for the border, outline and shadow so they stay thin and smooth.
 - **Invalid CSS fails silently:** `margin-bottom: 0 0 24px` is invalid because that property takes only one value. The browser ignored the whole line and used the default margins without showing an error, so I only found the problem by comparing the spacing with the design.
 - **Reading sizes from a design:** the mobile frame doesn't list font sizes, so I worked them out from the heights of the text boxes. The date and tag are 12px on mobile, and the author name stays at 14px.
 - **`100dvh`:** `100vh` pushed my footer below the visible screen in Brave on my phone, and `100dvh` fixed it.
@@ -82,15 +82,15 @@ This project helped me put several HTML and CSS concepts into practice, especial
 ### Challenges
 
 - **Card height:** my card was taller than the design because of the default margins and the `inline-flex` gap. I found both by measuring my card against the Figma frame.
-- **Mobile breakpoint:** I first used 380px because that is where the description wrapped differently in DevTools. When my PC stopped working, I tested on my phone by using browser zoom to change the width the browser reports. I settled on 420px so that the description keeps three lines, like the design. Below about 375px the text breaks earlier, which the design doesn't cover.
+- **Mobile breakpoint:** I first used 380px because that is where the description wrapped differently in DevTools. When I couldn't use my PC, I tested on my phone by using browser zoom to change the width the browser reports. I settled on 420px so that the description keeps three lines, like the design but I later moved to a mobile-first media query that uses rem, after the automated report suggested it.
 - **Shared font-size variable:** changing the date and tag to 12px on mobile also shrank the author name, because they used the same variable. I solved it by giving the name its own `0.875rem`.
 
 ### Continued development
 
 - I want to keep getting better at spotting default margins and inline gaps myself, instead of finding them by comparing with the design afterwards.
 - In future projects, I plan to focus on:
-    - Choosing breakpoints from the content, and trying a mobile-first approach.
-    - Getting better at reading Figma files for sizes and spacing.
+    - Using CSS Grid on a layout with rows and columns, such as a card grid.
+    - Getting better at reading Figma files for sizes, spacing and choosing breakpoints from the content.
 
 ### Useful resources
 
